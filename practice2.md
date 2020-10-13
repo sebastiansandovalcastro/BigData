@@ -35,16 +35,18 @@
 
 ### 5. ¿CUÁLES SON LOS ELEMENTOS ÚNICOS DE LA LISTA "Lista(1,2,2,4,6,7,3,7)"? (UTILICE CONVERSIÓN A CONJUNTOS)
 
-	...
+	val mylist = List(1,3,3,4,5,7,3,7)
+    mylist.toSet
 
 ### 6. CREA UN MAPA MUTABLE LLAMADO "Nombres" QUE CONTENGA LO SIGUIENTE: "Jose", 20, "Luis", 24, "Ana", 23, "Susana", 27
 
-	...
+  val nombres = collection.mutable.Map(("Jose",20),("Luis",24),("Ana",23),("Susana",27))
+    nombres.keys
 
 #### 6-A. IMPRIME TODAS LAS LLAVES DEL MAPA
 
-	...
+	println(nombres)
 
 #### 6-B. AGREGA EL SIGUIENTE VALOR AL MAPA: "Miguel", 23
 
-	...
+	nombres +=(("Miguel",23))
