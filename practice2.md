@@ -40,8 +40,8 @@
 
 ### 6. CREA UN MAPA MUTABLE LLAMADO "Nombres" QUE CONTENGA LO SIGUIENTE: "Jose", 20, "Luis", 24, "Ana", 23, "Susana", 27
 
-  val nombres = collection.mutable.Map(("Jose",20),("Luis",24),("Ana",23),("Susana",27))
-    nombres.keys
+	val nombres = collection.mutable.Map(("Jose",20),("Luis",24),("Ana",23),("Susana",27))
+	nombres.keys
 
 #### 6-A. IMPRIME TODAS LAS LLAVES DEL MAPA
 
