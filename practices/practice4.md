@@ -6,7 +6,33 @@
 
 This is the basic fibonacci Algorithm in scala. Based on the descendant recursive version.
 
-...
+In this version, We declare a variable called result at the beginning of the code. This variable is going to save the result value and it'll be returned when te function ends.
+
+Then, We create a function with an "if" condition inside, where we indicate that if the "n" number is lower than 2, the result must be the  given "n" value.
+
+If that is not the case, then the result must be the same function but with "n-1" as a parameter plus the same function but with "n-2" as a parameter.
+
+In this case, We are doing the function recursive, calling it again inside the same function.
+
+	//Fibonacci 1
+	var result = 0
+
+	def fibo1(n:Int):Int =
+	{
+		if(n < 2)
+		{
+			result =  n
+		}
+		else
+		{
+			result =  (fibo1(n - 1) + fibo1(n - 2))
+		}
+
+		return result
+	}
+
+	//The result must be 21
+	fibo1(8)
 
 ### 2. Fibonacci - Algorithm 2
 
@@ -57,7 +83,33 @@ We save the "y" value in the "result" variable and We return that variable as re
 
 This is the Fibonacci Algorithm iterative version.
 
-...
+In this version, We define three variables (a, b, c) at the beginning.
+
+We give to "b" the value of 1 and we start a loop from 0 to "n", where "c" is going to be the sum of "b" and "a", then We give to "a" the "b" value, and We give to "b" the "c" value, till We reach the iteration number "n".
+
+We return the "a" value at the end.
+
+	//Fibonacci 3
+	var a : Int = 0
+	var b : Int = 0
+	var c : Int = 0
+
+	def fibo3(n:Int ):Int=
+	{
+		b = 1
+
+		for (k <- Range(0,n))
+		{
+			c = b + a
+			a = b
+			b = c
+		}
+
+		return a
+	}
+
+	//The result must be 21
+	fibo3(8)
 
 ### 4. Fibonacci - Algorithm 4
 
@@ -65,7 +117,31 @@ This is the Fibonacci Algorithm iterative version.
 
 This is the Fibonacci Algorithm iterative version with two variables.
 
-...
+In this version, We define two variables (a, b) at the beginning.
+
+We give to "b" the value of 1 and we start a loop from 0 to "n", where "b" is going to be the sum of "b" and "a", then We give to "a" the "b" minus "a" value till We reach the iteration number "n".
+
+We return the "a" value at the end.
+
+	//Fibonacci 4
+	var a : Int = 0
+	var b : Int = 0
+
+	def fibo4(n:Int ):Int=
+	{
+		b = 1
+
+		for (k <- Range(0,n))
+		{
+			b = b + a
+			a = b - a
+		}
+
+		return a
+	}
+
+	//The result must be 21
+	fibo4(8)
 
 ### 5. Fibonacci - Algorithm 5
 
