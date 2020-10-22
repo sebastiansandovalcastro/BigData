@@ -1,6 +1,6 @@
 # PRACTICE 1 - PLAYING WITH SCALA FUNCTIONS
 
-### 1. DESARROLLAR UN ALGORITMO EN SCALA QUE CALCULE EL RADIO DE UN CÍRCULO
+### 1. DEVELOP AN ALGORITHM IN SCALA THAT CALCULATES THE RADIUS OF A CIRCLE
 
     //The perimeter
     var P = 25.13
@@ -11,7 +11,7 @@
     //The radio of the circle (3.999554... in this example)
     var r = P / (2 * Pi)
 
-### 2. DESARROLLAR UN ALGORITMO EN SCALA QUE ME DIGA SI UN NÚMERO ES PRIMO
+### 2. DEVELOP AN ALGORITHM IN SCALA THAT TELLS ME IF A NUMBER IS A PRIME
 
     val numero = 3
     var cont = 0
@@ -26,7 +26,7 @@
     println("El numero es primo ")
     }
 
-### 3. DADA LA VARIABLE bird = "tweet", UTILIZA LA INTERPOLACIÓN DE STRINGS PARA IMPRIMIR "Estoy escribiendo un tweet"
+### 3. GIVEN THE VARIABLE bird = "tweet", USE THE INTERPOLATION OF STRINGS TO PRINT "I'm writing a tweet"
 
     //The variable bird
     var bird = "tweet"
@@ -34,12 +34,12 @@
     //The sentence with the variable
     var sentence = s"Estoy escribiendo un $bird"
 
-### 4. DADA LA VARIABLE mensaje = "Hola Luke, ¡yo soy tu padre!", UTILIZA "SLICE" PARA EXTRAER LA SECUENCIA "Luke"
+### 4. GIVEN THE VARIABLE message = "Hello Luke, I am your father!", USE "SLICE" TO EXTRACT THE "Luke" SEQUENCE
 
     val star = "Hola Luke Yo soy tu padre"
     star.slice(5,9)
 
-### 5. ¿CUÁL ES LA DIFERENCIA ENTRE VALUE Y UNA VARIABLE EN SCALA?
+### 5. WHAT IS THE DIFFERENCE BETWEEN VALUE AND A VARIABLE IN SCALA?
 
     //Value is equal to 5
     val avalue = 5
@@ -55,7 +55,7 @@
 
     //The difference is that the value can't change its value and the variable can.
 
-### 6. DADA LA TUPLA (2,4,5,1,2,3,3.1416,23), REGRESA EL NÚMERO 3.1416
+### 6. GIVEN THE TUPLE (2,4,5,1,2,3,3,1416,23), RETURNS THE NUMBER 3.1416
 
     val tupla = ((2,4,5),(1,2,3),(3.1416,23))
     println(tupla._3)
