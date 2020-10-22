@@ -2,7 +2,11 @@
 
 ### 1. Fibonacci - Algorithm 1
 
+<div align="center">
+
 ![ScreenShot](https://raw.github.com/sebastiansandovalcastro/BigData/images/unit1/practice4/fibonacci1.png)
+
+</div>
 
 This is the basic fibonacci Algorithm in scala. Based on the descendant recursive version.
 
@@ -36,7 +40,11 @@ In this case, We are doing the function recursive, calling it again inside the s
 
 ### 2. Fibonacci - Algorithm 2
 
+<div align="center">
+
 ![ScreenShot](https://raw.github.com/sebastiansandovalcastro/BigData/images/unit1/practice4/fibonacci2.png)
+
+</div>
 
 This is the Fibonacci Algorithm explicit formula version.
 
@@ -79,7 +87,11 @@ We save the "y" value in the "result" variable and We return that variable as re
 
 ### 3. Fibonacci - Algorithm 3
 
+<div align="center">
+
 ![ScreenShot](https://raw.github.com/sebastiansandovalcastro/BigData/images/unit1/practice4/fibonacci3.png)
+
+</div>
 
 This is the Fibonacci Algorithm iterative version.
 
@@ -113,7 +125,11 @@ We return the "a" value at the end.
 
 ### 4. Fibonacci - Algorithm 4
 
+<div align="center">
+
 ![ScreenShot](https://raw.github.com/sebastiansandovalcastro/BigData/images/unit1/practice4/fibonacci4.png)
+
+</div>
 
 This is the Fibonacci Algorithm iterative version with two variables.
 
@@ -145,7 +161,11 @@ We return the "a" value at the end.
 
 ### 5. Fibonacci - Algorithm 5
 
+<div align="center">
+
 ![ScreenShot](https://raw.github.com/sebastiansandovalcastro/BigData/images/unit1/practice4/fibonacci5.png)
+
+</div>
 
 This is the Fibonacci Algorithm iterative vector version.
 
