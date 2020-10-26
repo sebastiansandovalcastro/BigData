@@ -124,10 +124,10 @@ We use the function *printSchema()* to see the structure of the data frame.
 
 ### 5. PRINTING THE FIRST FIVE COLUMNS
 
-We take the first five columns of the data frame "netflixDF" with the *take()* function, converting the result in an array.
+We print the first five columns of the data frame "netflixDF" with the *select()* function.
 
-	//We take the first 5 columns of the data frame.
-	netflixDF.take(5)
+	//We print the first 5 columns of the data frame.
+	netflixDF.select("Date","Open","High","Low","Close").show(5)
 
 <div align="center">
 
@@ -197,7 +197,7 @@ The close column represents the value with that Netflix ended the day.
 
 ### 10. MAX VALUE AND MIN VALUE IN THE COLUMN "VOLUME"
 
-We use the *max()* and *min()* functions in the *newNetflixDF* data frame with the *agg()* function. Whe show the result at the end.
+We use the *max()* and *min()* functions in the *newNetflixDF* data frame with the *agg()* function. We show the result at the end.
 
 	newNetflixDF.agg(
 	

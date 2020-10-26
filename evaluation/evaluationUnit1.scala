@@ -3,7 +3,7 @@
 //DEVELOPMENT
 
 //1. STARTING A SPARK SESSION
-	//We import SparkSession and create the val spark to generate the session. We will use this value to import the CSV file.
+//We import SparkSession and create the val spark to generate the session. We will use this value to import the CSV file.
 	
     //We import SparkSession.
 	import org.apache.spark.sql.SparkSession
@@ -12,16 +12,16 @@
 	val spark = SparkSession.builder().getOrCreate()
 
 //2. LOADING A FILE AND INFERRING THE DATA TYPES
-	//Using the spark value, We import the CSV file called "Netflix_2011_2016.csv" with the 	options "header" and "inferSchema" activated. Then, We show the data frame titled 		"netflixDF".
+//Using the spark value, We import the CSV file called "Netflix_2011_2016.csv" with the options "header" and "inferSchema" activated. Then, We show the data frame titled "netflixDF".
 
-	//We import the CSV file called "Netflix_2011_2016.csv", with the inferSchema and the 		header activated.
+	//We import the CSV file called "Netflix_2011_2016.csv", with the inferSchema and the header activated.
 	val netflixDF = spark.read.option("header", "true").option("inferSchema","true")csv("C:/Users/Sebas/Desktop/EXAMEN DATOS/Netflix_2011_2016.csv")
 
 	//We show the data frame netflixDF.
 	netflixDF.show(5)
 
 //3. SHOWING COLUMNS NAMES
-	//First We see all the columns of the data frame and then We can print each column name 	using the position.
+//First We see all the columns of the data frame and then We can print each column name using the position.
 
 	//We see the columns of the data frame.
 	netflixDF.columns
@@ -48,42 +48,42 @@
 	netflixDF.columns(6)
 
 //4. SHOWING THE SCHEME
-	//We use the function *printSchema()* to see the structure of the data frame.
+//We use the function *printSchema()* to see the structure of the data frame.
 
 	//We print the schema.
 	netflixDF.printSchema()
 
 //5. PRINTING THE FIRST FIVE COLUMNS
-	//We take the first five columns of the data frame "netflixDF" with the *take()* function, 		converting the result in an array.
+//We print the first five columns of the data frame "netflixDF" with the *select()* function.
 
-	//We take the first 5 columns of the data frame.
-	netflixDF.take(5)
+	//We print the first 5 columns of the data frame.
+	netflixDF.select("Date","Open","High","Low","Close").show(5)
 
 //6. USING DESCRIBE TO LEARN ABOUT THE DATA FRAME
-	//We use the *describe()* function to learn more details about the data frame. Each column 		presents the total of elements, the mean, the stddev, the min value and the max value.
+//We use the *describe()* function to learn more details about the data frame. Each column presents the total of elements, the mean, the stddev, the min value and the max value.
 
 	//Describing the columns of the data frame.
 	netflixDF.describe().show()
 
 //7. NEW COLUMN "HV RATIO"
-	//We create a new data frame with a brand new column called "HV Ratio". This new column 	have the results of the relation between the column "High" and the column "Volume" of the 		data frame netflixDF.
-	//As every relation, We decided to divide the column High between the column Volume. We 	keep the result of that relation in the value relationHV.
+//We create a new data frame with a brand new column called "HV Ratio". This new column have the results of the relation between the column "High" and the column "Volume" of the data frame netflixDF.
+//As every relation, We decided to divide the column High between the column Volume. We keep the result of that relation in the value relationHV.
 
-	//We obtain the result of the relation between High and Volume, and keep the result in the 		value relationHV.
+	//We obtain the result of the relation between High and Volume, and keep the result in the value relationHV.
 	val relationHV = netflixDF("High")/netflixDF("Volume")
 
-	//We create a new data frame called newNetflixDF with the withColum() function to add a 	new column. We create this collumn as HV Ratio and We fill the blanks with the results 		contained in the relationHV value.
+//We create a new data frame called newNetflixDF with the withColum() function to add a new column. We create this collumn as HV Ratio and We fill the blanks with the results contained in the relationHV value.
 
-	//Then, We create a brand new data frame with a new column called HV Ratio with the 		previous results.
+	//Then, We create a brand new data frame with a new column called HV Ratio with the previous results.
 	val newNetflixDF = netflixDF.withColumn("HV Ratio", relationHV)
 
-	//We show the new data frame newNetflixDF at the end.
+//We show the new data frame newNetflixDF at the end.
 
 	//Finally, We show the new data frame.
 	newNetflixDF.show()
 
 //8. THE DAY WITH THE MAX VALUE IN THE COLUMN "CLOSE"
-	//In order to obtain the max value in the "Close" column, We decided use the select 		sentence, where We use the column "Date" to see the day, and the column "Close" to see the 		close value. We sort the data in descendent mode in order to see the greatest value first, 		then We show just the first row.
+//In order to obtain the max value in the "Close" column, We decided use the select sentence, where We use the column "Date" to see the day, and the column "Close" to see the close value. We sort the data in descendent mode in order to see the greatest value first, then We show just the first row.
 
 	//Comentario
 	newNetflixDF.select(
@@ -98,7 +98,7 @@
 	//The close column represents the value with that Netflix ended the day.
 
 //### 10. MAX VALUE AND MIN VALUE IN THE COLUMN "VOLUME"
-//We use the *max()* and *min()* functions in the *newNetflixDF* data frame with the *agg()* function. Whe show the result at the end.
+//We use the *max()* and *min()* functions in the *newNetflixDF* data frame with the *agg()* function. We show the result at the end.
 
 	newNetflixDF.agg(
 	
