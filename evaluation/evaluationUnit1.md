@@ -219,7 +219,7 @@ First of all, We import the "spark.implicits._" in order to use the $-notation.
 	// This import is needed to use the $-notation
 	import spark.implicits._
 
-#### 11a. AMOUNT OF DAYS WHEN "COUNT" WAS LOWER THAN 600
+#### 11a. AMOUNT OF DAYS WHEN "CLOSE" WAS LOWER THAN 600
 
 We decided to filter the data frame "newNetflixDF" where the values in the "Close" column were lower than 600, and We count those values to print the result.
 
