@@ -35,7 +35,7 @@ BDD-1704 SC9A, L - V 18:00 - 19:00 (91L4/0308)
 PACHECO RAMÍREZ HUGO ANDRÉS	16210790
 
 
-Tijuana, Baja California, al xx de xxxx de 2020
+Tijuana, Baja California, al 29 de Octubre de 2020
  
 </div>
 
