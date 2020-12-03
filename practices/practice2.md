@@ -63,3 +63,42 @@ We prepare the data frame for use the functions of logistic regression, of machi
 	
 	//Using randomSplit() function to create 70/30 split test and train data.
 	val Array(training, test) = logregdata.randomSplit(Array(0.7, 0.3), seed = 12345)
+
+### SETTING UP A PIPELINE
+
+We use a pipeline object and a logistic regression value in order to create the training model and see the results.
+
+	//Importing Pipeline.
+	import org.apache.spark.ml.Pipeline
+	
+	//Creating a new LogisticRegression object called "lr".
+	val lr = new LogisticRegression()
+	
+	//Creating a new Pipeline object called "pipeline" with the elements "assembler" and "lr".
+	val pipeline = new Pipeline().setStages(Array(assembler, lr))
+	
+	//Fitting the "pipeline" object created before for the training set.
+	val model = pipeline.fit(training)
+	
+	//Taking the results in the test set with the transform() function.
+	val results = model.transform(test)
+
+### EVALUATING THE MODEL
+
+We use the MulticlassMetrics library to see the metrics accuracy and the confusion matrix.
+
+	//Importing MulticlassMetrics library for metrics and evaluation.
+	import org.apache.spark.mllib.evaluation.MulticlassMetrics
+	
+	//Converting test results to RDD using .as and .rdd.
+	val predictionAndLabels = results.select($"prediction",$"label").as[(Double, Double)].rdd
+	
+	//Initialize a MulticlassMetrics object.
+	val metrics = new MulticlassMetrics(predictionAndLabels)
+	
+	//Printing the confusion matrix.
+	println("Confusion matrix:")
+	println(metrics.confusionMatrix)
+	
+	//Showing the metrics accuracy.
+	metrics.accuracy
