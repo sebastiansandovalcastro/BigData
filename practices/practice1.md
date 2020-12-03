@@ -72,3 +72,52 @@ We create the value _assembler_ with VectorAssembler() function. We use this obj
 	// Configure las columnas de entrada de donde se supone que leemos los valores.
 	// Llamar a esto nuevo assambler.
 	val assembler = new VectorAssembler().setInputCols(Array("Avg Session Length", "Time on App", "Time on Website", "Length of Membership")).setOutputCol("features")
+	
+### 8. DATA FRAME DF2
+
+We transform the data frame _df_ with the transform() function, using the assembler created before. We use the union between the column that we called _label_ and the new column called _features_. We save the result in the new data frame _df2_.
+
+	// Transforme el data frame para que tome la forma de ("label","features")
+	// Utilice el assembler para transform nuestro DataFrame a dos columnas: label and features
+	val df2 = assembler.transform(df).select($"label", $"features")
+
+### 9. LINEAR REGRESSION
+
+We create an object called _lr_, that represents a new LinearRegression() object.
+
+	// Crear un objeto para modelo de regresion linea.
+	val lr = new LinearRegression()
+
+We fit the _df2_ data frame using the _lr_ object created before and saving the result in the _lrModelo_ value.
+
+	// Ajuste el modelo para los datos y llame a este modelo lrModelo
+	val lrModelo = lr.fit(df2)
+
+And finally, we make a summary of the model creating an object called _trainingSummary_ with the _summary_ function, and using this object to obtain the results that we were looking for.
+
+	// Resuma el modelo sobre el conjunto de entrenamiento imprima la salida de algunas metricas!
+	// Utilize metodo .summary de nuestro  modelo para crear un objeto
+	// llamado trainingSummary
+	val trainingSummary = lrModelo.summary
+
+### 10. RESULTS
+
+We show the cofficients and the intercept for the linear regression using _lrModelo_.
+
+	// Imprima the coefficients e intercept para la regresion lineal
+	println(s"Coefficients: ${lrModelo.coefficients} Intercept: ${lrModelo.intercept}")
+
+![1.png](https://raw.github.com/sebastiansandovalcastro/BigData/images/unit2/practice1/1.png)
+
+And we print the residuals, the root meand squared error (RMSE), the mean squared error (MSE) and the r².
+
+	// Muestre los valores de residuals, el RMSE, el MSE, y tambien el R^2 .
+	trainingSummary.residuals.show()
+
+![2.png](https://raw.github.com/sebastiansandovalcastro/BigData/images/unit2/practice1/2.png)
+
+	println(s"RMSE: ${trainingSummary.rootMeanSquaredError}")
+	println(s"MSE: ${trainingSummary.meanSquaredError}")
+	println(s"r2: ${trainingSummary.r2}")
+
+![3.png](https://raw.github.com/sebastiansandovalcastro/BigData/images/unit2/practice1/3.png)
