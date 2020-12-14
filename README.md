@@ -13,7 +13,7 @@
 - [PRACTICE 7: MULTILAYER PERCEPTION CLASSIFIER (TEAM 5 - CODE ANALYSIS)](https://github.com/sebastiansandovalcastro/BigData/blob/unit2/practices/practice7Unit2.md)
 - [PRACTICE 8: LINEAR SUPPORT VECTOR MACHINE (TEAM 6 - CODE ANALYSIS)](https://github.com/sebastiansandovalcastro/BigData/blob/unit2/practices/practice8Unit2.md)
 - [PRACTICE 9: ONE VS. REST (TEAM 7 - CODE ANALYSIS)](https://github.com/sebastiansandovalcastro/BigData/blob/unit2/practices/practice9Unit2.md)
-- [PRACTICE 10: NAIVE BAYES (TEAM 8 - CODE ANALYSIS)](https://github.com/sebastiansandovalcastro/NaiveBayes/README.md)
+- [PRACTICE 10: NAIVE BAYES (TEAM 8 - CODE ANALYSIS)](https://github.com/sebastiansandovalcastro/NaiveBayes/blob/main/README.md)
 
 ### [HOMEWORKS](https://github.com/sebastiansandovalcastro/BigData/blob/unit2/homeworks)
 
