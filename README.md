@@ -1,7 +1,5 @@
 # UNIT 2
 
-## INDEX
-
 ### [PRACTICES](https://github.com/sebastiansandovalcastro/BigData/blob/unit2/practices)
 
 - [PRACTICE 1: LINEAR REGRESSION](https://github.com/sebastiansandovalcastro/BigData/blob/unit2/practices/practice1Unit2.md)
@@ -19,8 +17,6 @@
 
 - [HOMEWORK 1: WHAT IS THE ELBOW METHOD? (PACHECO)](https://github.com/sebastiansandovalcastro/BigData/blob/unit2/homeworks/homework1Unit2_pacheco.md)
 - [HOMEWORK 1: WHAT IS THE ELBOW METHOD? (SANDOVAL)](https://github.com/sebastiansandovalcastro/BigData/blob/unit2/homeworks/homework1Unit2_sandoval.md)
-
-### [INVESTIGATIONS](https://github.com/sebastiansandovalcastro/BigData/blob/unit2/investigations)
 
 ### [EVALUATION](https://github.com/sebastiansandovalcastro/BigData/blob/unit2/evaluation)
 
